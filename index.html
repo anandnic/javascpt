@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        function touchRock() {
+            var userName=prompt("What is your name", "Enter your name");
+            if(userName) {
+                alert("Hello " +userName+ ".");
+                document.getElementById("rock").src="img/rocks.png";
+                
+            }
+        }
+        </script>
+    </head>
+    <body onload="alert('Hello, I am a rock');">
+        <div style="margin-top: 100px; text-align: center;">
+            <img src="img/rock.png" id="rock" onclick="touchRock()" style="cursor: pointer;">
+            <div id="im" hidden></div>
+        </div>
+    </body>
+</html>
