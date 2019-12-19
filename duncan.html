@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Duncan's Just-In-Time Donuts</title>
+<link rel="stylesheet" type="text/css" href=
+"donuts.css" />
+<script type="text/javascript">
+function updateOrder() {
+const TAXRATE;
+const DONUTPRICE;
+var numCakeDonuts = document.getElementB
+yId("cakedonuts").value;
+var numGlazedDonuts = document.getElementB
+yId("glazeddonuts").value;
+var subTotal = (numCakeDonuts + numGlazedDonuts) * DONUTPRICE;
+var tax = subTotal * TAXRATE;
+var total = subTotal + tax;
+document.getElementById("subtotal").valu
+e = "$" + subTotal.toFixed(2);
+document.getElementById("tax").value = "$"
++ tax.toFixed(2);
+document.getElementById("total").value =
+"$" + total.toFixed(2);
+}
+function placeOrder() {
+// Submit order to server...
+form.submit();
+}
+</script>
+</head>
+<body>
+<div id="frame">
+...
+<form name="orderform" action="donuts.php"
+method="POST">
+...
+<div class="field">
+# of cake donuts: <input type="text" id="c
+akedonuts" name="cakedonuts"
+value="" onchange="updateOrder();" />
+</div>
+<div class="field">
+# of glazed donuts: <input type="text" id="g
+lazeddonuts"
+name="glazeddonuts" value="" onchange="updat
+eOrder();" />
+</div>
+...
+<div class="field">
+<input type="button" value="Place Order"
+onclick="placeOrder(this.form);" />
+</div>
+</form>
+</div>
+</body>
+</html>
